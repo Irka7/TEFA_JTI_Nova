@@ -56,6 +56,49 @@
     font-size: 0.95rem;
 }
 
+/* List icons spacing and alignment */
+.layanan-card ul li i {
+    display: inline-block;
+    margin-right: 0.5rem; /* space between icon and text */
+    vertical-align: middle; /* align icon with the text baseline */
+    color: #0d6efd; /* keep same accent color for lists */
+    align-content: baseline;
+}
+
+/* tidy, left aligned list layout inside layanan-card */
+.layanan-card .list-checked {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* center the column inside the card */
+    width: 100%;
+    max-width: 320px; /* adjust width as needed */
+    text-align: left; /* left-align text inside the list */
+}
+
+.layanan-card .list-checked li {
+    display: flex; /* icon + text on one line */
+    align-items: center; /* align icon vertically with wrapped text */
+    gap: 0.6rem; /* space between icon and text */
+    margin-bottom: 0.6rem; /* spacing between items */
+    color: #333;
+}
+
+.layanan-card .list-checked li i {
+    font-size: 1.1rem; /* slightly larger icon for better balance */
+    margin-top: 0; /* remove manual nudge, center alignment handles vertical placement */
+    line-height: 1; /* ensure consistent icon line height */
+    color: #0d6efd; /* keep accent color */
+}
+
+.layanan-card .list-checked li span {
+    display: block;
+    line-height: 1.6; /* more readable wrapping spacing */
+}
+
+@media (max-width: 576px) {
+    .layanan-card .list-checked { max-width: none; width: 100%; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .layanan-hero {
