@@ -3,7 +3,7 @@
 =========================== */
 .layanan-hero {
     background: url("assets/hero-layanan.jpg") center/cover no-repeat;
-    padding: 140px 0;
+    padding: 40px 0;
     position: relative;
 }
 
@@ -17,6 +17,7 @@
 .layanan-hero .container {
     position: relative;
     z-index: 2;
+    /* padding: 40px 0; */
 }
 
 /* ===========================
