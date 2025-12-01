@@ -1,0 +1,587 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c; /* Changed from blue to red */
+    --accent: #3498db; /* Changed from red to blue */
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --text-light: #7f8c8d;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    padding-top: 76px; /* Account for fixed navbar */
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary); /* Now red */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') 
+                no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary); /* Now red */
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* About Section */
+.collab-logo {
+    background-color: var(--light);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.info-card {
+    background-color: white;
+    border-left: 4px solid var(--secondary); /* Now red */
+}
+
+.info-item h5 {
+    color: var(--secondary) !important; /* Now red */
+}
+
+/* Services Section */
+.service-card {
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.service-icon {
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-card .fa-chalkboard-teacher,
+.service-card .fa-hands-helping,
+.service-card .fa-user-graduate {
+    color: var(--secondary) !important; /* Now red */
+}
+
+/* Portfolio Section */
+.portfolio-filter {
+    margin-bottom: 2rem;
+}
+
+.portfolio-filter .btn {
+    margin: 0 5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    font-weight: 600;
+    padding: 10px 24px;
+    background-color: white !important; /* Background putih */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-filter .btn:hover {
+    background-color: rgba(231, 76, 60, 0.1) !important;
+    border-color: var(--secondary);
+    color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+.portfolio-filter .btn.active {
+    background: linear-gradient(135deg, var(--secondary), #c0392b) !important;
+    border-color: var(--secondary);
+    color: white !important; /* Text putih saat active */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.portfolio-item {
+    height: 200px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary); /* Now red */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== GALERI SECTION - CAROUSEL 3 GAMBAR ===== */
+.galeri-section .carousel-inner {
+    padding: 20px 0;
+}
+
+.galeri-section .carousel-item {
+    height: 300px;
+    transition: transform 0.5s ease;
+}
+
+.galeri-section .carousel-item.active {
+    display: flex;
+}
+
+.galeri-section .carousel-item-row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeri-section .carousel-image-container {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.galeri-section .carousel-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.galeri-section .carousel-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeri-section .carousel-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.galeri-section .carousel-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px 15px 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.galeri-section .carousel-image-container:hover .carousel-image-overlay {
+    transform: translateY(0);
+}
+
+.galeri-section .carousel-image-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+/* Carousel Controls */
+.galeri-section .carousel-control-prev,
+.galeri-section .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.galeri-section .carousel-control-prev {
+    left: -25px;
+}
+
+.galeri-section .carousel-control-next {
+    right: -25px;
+}
+
+.galeri-section .carousel-control-prev:hover,
+.galeri-section .carousel-control-next:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Carousel Indicators */
+.galeri-section .carousel-indicators {
+    bottom: -50px;
+}
+
+.galeri-section .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: var(--secondary);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.galeri-section .carousel-indicators button.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.galeri-section .carousel-indicators button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design untuk Carousel */
+@media (max-width: 992px) {
+    .galeri-section .carousel-item-row {
+        gap: 10px;
+    }
+    
+    .galeri-section .carousel-item {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeri-section .carousel-item-row {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .galeri-section .carousel-image-container {
+        flex: 0 0 calc(50% - 10px);
+        height: 200px;
+    }
+    
+    .galeri-section .carousel-item {
+        height: auto;
+        min-height: 430px;
+    }
+    
+    .galeri-section .carousel-control-prev,
+    .galeri-section .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .galeri-section .carousel-control-prev {
+        left: -20px;
+    }
+    
+    .galeri-section .carousel-control-next {
+        right: -20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .galeri-section .carousel-item-row {
+        flex-direction: column;
+    }
+    
+    .galeri-section .carousel-image-container {
+        flex: 0 0 100%;
+        height: 180px;
+    }
+    
+    .galeri-section .carousel-item {
+        min-height: 600px;
+    }
+    
+    .galeri-section .carousel-control-prev,
+    .galeri-section .carousel-control-next {
+        display: none;
+    }
+    
+    .galeri-section .carousel-image-overlay {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Contact Section */
+.contact-form .form-control {
+    border: 1px solid #495057;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.contact-form .form-control::placeholder {
+    color: #adb5bd;
+}
+
+.contact-form .form-control:focus {
+    background-color: rgba(255,255,255,0.15);
+    border-color: var(--secondary); /* Now red */
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25); /* Now red */
+}
+
+.social-icon {
+    transition: all 0.3s;
+    border-color: var(--secondary) !important; /* Now red */
+    color: var(--secondary) !important; /* Now red */
+}
+
+.social-icon:hover {
+    background-color: var(--secondary) !important; /* Now red */
+    border-color: var(--secondary) !important; /* Now red */
+    color: white !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary) !important; /* Now red */
+    border-color: var(--secondary) !important; /* Now red */
+}
+
+.btn-primary:hover {
+    background-color: #c0392b !important; /* Darker red */
+    border-color: #c0392b !important; /* Darker red */
+}
+
+.btn-outline-primary {
+    color: var(--secondary) !important; /* Now red */
+    border-color: var(--secondary) !important; /* Now red */
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--secondary) !important; /* Now red */
+    border-color: var(--secondary) !important; /* Now red */
+    color: white !important;
+}
+
+/* Modal Styles */
+.modal-content.bg-transparent .btn-close {
+    filter: invert(1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a252f !important;
+}
+
+footer .text-light {
+    color: #e9ecef !important;
+}
+
+footer a.text-light {
+    color: #e9ecef !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a.text-light:hover {
+    color: var(--secondary) !important; /* Now red */
+    text-decoration: underline;
+}
+
+footer .text-primary {
+    color: var(--secondary) !important; /* Now red */
+}
+
+footer h4, footer h5 {
+    color: white !important;
+    margin-bottom: 1rem;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer hr {
+    border-color: #34495e !important;
+    opacity: 1;
+}
+
+/* Social media icons in footer */
+footer .fa-instagram,
+footer .fa-tiktok,
+footer .fa-youtube {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .fa-instagram:hover {
+    color: #E1306C !important;
+    transform: scale(1.1);
+}
+
+footer .fa-tiktok:hover {
+    color: #69C9D0 !important;
+    transform: scale(1.1);
+}
+
+footer .fa-youtube:hover {
+    color: #FF0000 !important;
+    transform: scale(1.1);
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+    background-color: rgba(44, 62, 80, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .video-item-main .play-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .video-item-main .play-icon i {
+        font-size: 2rem !important;
+    }
+    
+    .portfolio-filter .btn {
+        margin: 5px;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Footer responsive */
+    footer .col-lg-4,
+    footer .col-lg-2,
+    footer .col-lg-3 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-item {
+        height: 250px;
+    }
+    
+    /* Footer mobile */
+    footer {
+        text-align: center;
+    }
+    
+    footer .d-flex.gap-3 {
+        justify-content: center;
+    }
+}
