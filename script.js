@@ -2,59 +2,59 @@
 const portfolioData = [
     {
         id: 1,
-        title: "E-Commerce Platform",
+        title: "Cerdas Cermat",
         category: "website",
         image: "assets/web1.png",
-        description: "Platform e-commerce dengan fitur lengkap untuk UMKM"
+        description: "Sebuah Aplikasi Lomba Cerdas Cermat Olimpiade Akuntansi Vokasi (OAV) 2024 berbasis website"
     },
     {
         id: 2,
-        title: "Mobile Banking App",
+        title: "Dexagon App",
         category: "website",
         image: "assets/web2.png",
-        description: "Aplikasi mobile banking dengan keamanan terbaik"
+        description: "Aplikasi Olimpiade Akuntansi Vokasi (OAV) 2024 berbasis website"
     },
     {
         id: 3,
-        title: "Learning Management System",
+        title: "SSC SMASA Web App",
         category: "website",
         image: "assets/web3.png",
-        description: "Sistem pembelajaran online dengan website dan mobile app"
+        description: "Sebuah Aplikasoi Science School Competition 2024 SMA Negeri 1 Jember"
     },
     {
         id: 4,
-        title: "Company Profile Website",
-        category: "website",
-        image: "assets/web4.png",
-        description: "Website company profile modern dan responsive"
+        title: "Silulus Mif",
+        category: "both",
+        image: "assets/Silulus Mif8.jpg",
+        description: "Sistem Prediksi Kelulusan Mahasiswa yang berbasis Website dan Aplikasi Mobile"
     },
     {
         id: 5,
-        title: "Hospital Management System",
+        title: "Kenaikan Pangkat Kepegawaian",
         category: "website",
         image: "assets/web6.png",
-        description: "Sistem manajemen rumah sakit terintegrasi"
+        description: "Aplikasi Kenaikan Pangkat Kepegawaian yang berbasis website dan diusung oleh JTI Innovation"
     },
     {
         id: 6,
-        title: "Portfolio Website",
+        title: "Dikantin Polije",
         category: "both",
         image: "assets/webmobile1.png",
-        description: "Website portfolio kreatif untuk freelancer"
+        description: "Aplikasi yang berbasis website dan mobile dan dapat digunakan untuk memesan makanan di kantin Polije"
     },
     {
         id: 7,
-        title: "Fitness Tracking App",
+        title: "CDC Polije",
         category: "both",
         image: "assets/webmobile2.png",
-        description: "Aplikasi tracking fitness dan kesehatan"
+        description: "Sebuah Aplikasi yang digunakan untuk mencari sebuah lowongan pekerjaan bagi mahasiswa Polije"
     },
     {
         id: 8,
-        title: "Social Media Platform",
+        title: "Dikasiri Polije",
         category: "both",
         image: "assets/webmobile3.png",
-        description: "Platform media sosial dengan website dan aplikasi mobile"
+        description: "Aplikasi Kasir Tefa Backery Polije yang berbasis website dan mobile"
     }
 ];
 
